@@ -1,35 +1,46 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import BasicTabs from "./TabPanel";
+import "./App.css";
+import Box from "@mui/material/Box";
+import Container from "@mui/material/Container";
+import Header from "./Header";
+import { ThemeProvider, createTheme } from "@mui/material/styles";
+
+const theme = createTheme({
+  palette: {
+      primary: {
+        main: '#950202'
+    },
+    secondary:{
+      main: '#EB0010'
+    },
+text:{
+  primary: '#000000',
+  secondary: '#000000'
+}
+  },
+  typography:{
+    fontSize: 16
+  }
+});
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    <Container maxWidth="xl">
+      <ThemeProvider theme={theme}>
+    
+        <Header />
+        <Box
+          sx={{
+            bgcolor: "white",
+            height: "auto",
+            width: "100%",
+          }}
+        >
+          <BasicTabs />
+        </Box>
+      </ThemeProvider>
+    </Container>
+  );
 }
 
-export default App
+export default App;
