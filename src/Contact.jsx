@@ -13,6 +13,7 @@ export default function Contact() {
             xl: '30%', // theme.breakpoints.up('xl')
           },
         margin: 'auto',
+
       }}
     >
       <div className="text-flex">

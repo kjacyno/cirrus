@@ -25,7 +25,7 @@ text:{
 
 function App() {
   return (
-    <Container maxWidth="xl">
+    <Container maxWidth="xl" sx={{paddingTop: '1rem'}}>
       <ThemeProvider theme={theme}>
     
         <Header />
