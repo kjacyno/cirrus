@@ -6,7 +6,7 @@ import Box from '@mui/material/Box';
 import Projects from './Projects';
 import About from './about';
 import Contact from './Contact';
-
+import LandingPage from "./LandingPage.jsx";
 
 function CustomTabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -19,11 +19,13 @@ function CustomTabPanel(props) {
       aria-labelledby={`simple-tab-${index}`}
       {...other}
     >
-      {value === index && (
+      {value === index && value < 4 ? (
         <Box sx={{ p: 3 }}>
             {children}
         </Box>
-      )}
+      )
+      :
+      <LandingPage/>}
     </div>
   );
 }
@@ -42,7 +44,7 @@ function a11yProps(index) {
 }
 
 export default function BasicTabs() {
-  const [value, setValue] = React.useState(0);
+  const [value, setValue] = React.useState(4);
 
   const handleChange = (event, newValue) => {
     setValue(newValue);
@@ -59,6 +61,7 @@ export default function BasicTabs() {
         </Tabs>
       </Box>
       <Box sx={{ width: '100%' }}>
+          {value === 4 && <LandingPage/>}
       <CustomTabPanel value={value} index={0}>
         <About/>
       </CustomTabPanel>

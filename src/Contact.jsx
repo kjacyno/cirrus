@@ -6,21 +6,21 @@ export default function Contact() {
     <Box
       sx={{
         width: {
-            xs: '100%', // theme.breakpoints.up('xs')
-            sm: '100%', // theme.breakpoints.up('sm')
-            md: '50%', // theme.breakpoints.up('md')
-            lg: '30%', // theme.breakpoints.up('lg')
-            xl: '30%', // theme.breakpoints.up('xl')
+            xs: '100%',
+            sm: '100%',
+            md: '50%',
+            lg: '30%',
+            xl: '30%',
           },
         margin: 'auto',
 
       }}
     >
       <div className="text-flex">
-        <PhoneIcon /> <p> 000 000 000</p>{" "}
+        <PhoneIcon /> <p>+48 887 842 913</p>
       </div>
       <div className="text-flex">
-        <ContactMailIcon /> <p>cirrus@wp.pl</p>{" "}
+        <ContactMailIcon /> <p>cirrus@wp.pl</p>
       </div>
     </Box>
   );

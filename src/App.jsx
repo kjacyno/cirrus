@@ -1,5 +1,5 @@
 import BasicTabs from "./TabPanel";
-import "./App.css";
+import "./App.scss";
 import Box from "@mui/material/Box";
 import Container from "@mui/material/Container";
 import Header from "./Header";

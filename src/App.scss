@@ -1,0 +1,103 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap');
+*{
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    font-size: 1.2rem;
+}
+
+
+.landing-box{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-image: url("/src/assets/clouds.jpg");
+    background-size: cover;
+    background-origin: border-box;
+    background-clip: padding-box;
+    background-repeat: no-repeat;
+    background-position: center;
+    opacity: 0;
+
+    animation: fadein 5s forwards, slidein 50s infinite alternate;
+    -webkit-animation: fadein 5s forwards, slidein 50s infinite alternate;
+    position: relative;
+    box-shadow: inset 0px 0px 15px 20px rgba(255,255,255,1);
+    img{
+        width: 25%;
+    }
+}
+
+@keyframes fadein {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@-webkit-keyframes fadein {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+@-webkit-keyframes slidein {
+    from {background-position: top; background-size:3000px; }
+    to {background-position: -100px 0px;background-size:2750px;}
+}
+
+@keyframes slidein {
+    from {background-position: top;background-size:3000px; }
+    to {background-position: -100px 0px;background-size:2750px;}
+
+}
+
+
+.header-logo{
+    margin-top: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.header-logo img{
+width: auto;
+    height: 15vh;
+    padding: 1rem;
+}
+.text-flex{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+   
+}
+.text-info{
+    margin: 0 auto;
+}
+.gallery{
+    margin: 2rem 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    img{
+        width: auto;
+        height: 50px;
+        margin-inline: .5rem;
+    }
+}
+@media screen and (max-width: 768px) {
+    *{
+        font-size: 1.1rem;
+    }
+    .landing-box {
+    height: 50vh;
+        img{
+            width: 50%;
+        }
+    }
+        .gallery {
+        display: block; /* Change to column layout */
+        text-align: center; /* Center the images */
+    }
+
+    .gallery img {
+        width: auto;
+        height: 30px;
+        margin: 0.25rem ;
+    }
+}
