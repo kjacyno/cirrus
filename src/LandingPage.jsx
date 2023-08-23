@@ -4,5 +4,3 @@ export default function LandingPage() {
         <div className='landing-box'><img src={Logo} alt=""/> </div>
     );
 }
-
- 

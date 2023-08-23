@@ -13,14 +13,13 @@ export default function Contact() {
             xl: '30%',
           },
         margin: 'auto',
-
       }}
     >
       <div className="text-flex">
-        <PhoneIcon /> <p>+48 887 842 913</p>
+          <PhoneIcon /> <p><a href="tel:+48887842913">+48 887 842 913</a></p>
       </div>
       <div className="text-flex">
-        <ContactMailIcon /> <p>cirrus@wp.pl</p>
+          <ContactMailIcon /> <p><a href="mailto:cirrus@wp.pl">cirrus@wp.pl</a></p>
       </div>
     </Box>
   );

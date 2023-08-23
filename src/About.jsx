@@ -11,7 +11,6 @@ export default function About() {
     return (
         <Box sx={{
             width: "100%", display: 'flex', justifyContent: 'center', alignItems: 'center', flexDirection: 'column',
-
         }}>
             <p className="text-info">
                 Firma Cirrus działa od 1998 roku.<br/>

@@ -34,6 +34,7 @@ export default function Projects() {
                 '&::-webkit-scrollbar': {
                     display: 'none',
                 },
+                cursor: 'pointer',
                 gridTemplateColumns:
                     'repeat(auto-fill, minmax(500px, 1fr))!important',
                 '@media screen and (max-width: 768px)': {
@@ -46,26 +47,27 @@ export default function Projects() {
                 ?
                 Array.from(Array(4)).map((index) => (
                     <ImageListItem key={index}>
-                        <Skeleton variant="rectangular" height={500}/>
+                        <Skeleton key={index} variant="rectangular" height={500}/>
                     </ImageListItem>
                 ))
-                :
-                itemData.map((item) => (
-                    <ImageListItem key={item.img} onClick={() => handleOpen(item.img)} sx={{maxWidth: '100vw'}}>
-                        <img
-                            src={`${item.img}?w=248&fit=crop&auto=format`}
-                            srcSet={`${item.img}?w=248&fit=crop&auto=format&dpr=2 2x`}
-                            alt={item.title}
-                            loading="lazy"
-                        />
-                        <ImageListItemBar
-                            sx={{
-                                maxWidth: '100%',
-                            }}
-                            title={item.title}
-                        />
-                    </ImageListItem>
-                ))}
+                : (
+                    itemData.map((item) => (
+                        <ImageListItem key={item.img} onClick={() => handleOpen(item.img)} sx={{maxWidth: '100vw'}}>
+                            <img
+                                src={`${item.img}?w=248&fit=crop&auto=format`}
+                                srcSet={`${item.img}?w=248&fit=crop&auto=format&dpr=2 2x`}
+                                alt={item.title}
+                                loading="lazy"
+                                key={item.title}
+                            />
+                            <ImageListItemBar
+                                sx={{
+                                    maxWidth: '100%',
+                                }}
+                                title={item.title}
+                            />
+                        </ImageListItem>
+                    )))}
             <Backdrop
                 sx={{color: '#fff', zIndex: (theme) => theme.zIndex.drawer + 1}}
                 open={selectedImage !== null}
@@ -82,7 +84,7 @@ export default function Projects() {
 
 const itemData = [
     {
-        img: 'https://firebasestorage.googleapis.com/v0/b/cirrus-kowalczyk.appspot.com/o/IMG_20190416_094639.jpg?alt=media&token=febece6c-fd5f-45a2-b492-20dc27b6c1dd',
+        img: 'https://firebasestorage.googleapis.com/v0/b/cirrus-kowalczyk.appspot.com/o/dom-ns.jpg?alt=media&token=f3b96696-6f83-481f-a6fe-a08c2eeb62b5',
         title: 'Dom jednorodzinny, ul.Chruściela, Nowy Sącz',
     },
     {
@@ -114,15 +116,15 @@ const itemData = [
         title: 'Hotel Piwniczna SPA&Conference, Piwniczna - Zdroj',
     },
     {
-        img: 'https://firebasestorage.googleapis.com/v0/b/cirrus-kowalczyk.appspot.com/o/domek-ksiezniczki-ns.jpg?alt=media&token=84f9e489-da45-48bc-8bb4-c64573ecd5ef',
+        img: 'https://firebasestorage.googleapis.com/v0/b/cirrus-kowalczyk.appspot.com/o/palacyk-ns.jpg?alt=media&token=d91ceacd-d28a-4dfe-96d9-d38487dac80b',
         title: 'Pałacyk, Nowy Sącz',
     },
     {
-        img:'https://firebasestorage.googleapis.com/v0/b/cirrus-kowalczyk.appspot.com/o/drukarnia-flexergis.jpg?alt=media&token=8ca94fc3-9ea1-423e-a7fb-d23b35733af8',
+        img: 'https://firebasestorage.googleapis.com/v0/b/cirrus-kowalczyk.appspot.com/o/drukarnia-flexergis.jpg?alt=media&token=8ca94fc3-9ea1-423e-a7fb-d23b35733af8',
         title: 'Drukarnia Flexergis, Nowy Sącz',
     },
     {
-        img:'https://firebasestorage.googleapis.com/v0/b/cirrus-kowalczyk.appspot.com/o/golkowice-biblioteka.jpg?alt=media&token=df9457b5-0798-4a97-afe6-e6e87e6a5884',
+        img: 'https://firebasestorage.googleapis.com/v0/b/cirrus-kowalczyk.appspot.com/o/golkowice-biblioteka.jpg?alt=media&token=df9457b5-0798-4a97-afe6-e6e87e6a5884',
         title: 'Powiatowa i Miejsko-Gminna Biblioteka Publiczna im. Wiktora Bazielicha w Starym Sączu – Filia w Przysietnicy, Gołkowice Górne'
     },
     {
@@ -130,11 +132,11 @@ const itemData = [
         title: 'Budynek usługowy, ul.Pawia, Kraków'
     },
     {
-img:'https://firebasestorage.googleapis.com/v0/b/cirrus-kowalczyk.appspot.com/o/mikolow-salwator.jpg?alt=media&token=71a5b4e7-b915-479e-ab81-b83925f158dd',
-    title: 'Dom Seniora Salwator Park, Mikołów'
+        img: 'https://firebasestorage.googleapis.com/v0/b/cirrus-kowalczyk.appspot.com/o/mikolow-salwator.jpg?alt=media&token=71a5b4e7-b915-479e-ab81-b83925f158dd',
+        title: 'Dom Seniora Salwator Park, Mikołów'
     },
     {
-        img:'https://firebasestorage.googleapis.com/v0/b/cirrus-kowalczyk.appspot.com/o/piwniczanka.jpg?alt=media&token=99b4cc07-5a33-4592-952d-3d0a9ecd0305',
-    title:' Hala i budynek administracyjno-biurowy, ul.Zdrojowa, Piwniczna-Zdrój'
+        img: 'https://firebasestorage.googleapis.com/v0/b/cirrus-kowalczyk.appspot.com/o/piwniczanka.jpg?alt=media&token=99b4cc07-5a33-4592-952d-3d0a9ecd0305',
+        title: ' Hala i budynek administracyjno-biurowy, ul.Zdrojowa, Piwniczna-Zdrój'
     }
 ]
