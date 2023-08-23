@@ -25,13 +25,14 @@ text:{
 
 function App() {
   return (
-    <Container maxWidth="xl" sx={{paddingTop: '1rem'}}>
+    <Container  sx={{paddingTop: '1rem',         maxWidth: '100vw',
+    }}>
       <ThemeProvider theme={theme}>
     
         <Header />
         <Box
           sx={{
-            bgcolor: "white",
+              backgroundColor: "white",
             height: "auto",
             width: "100%",
           }}

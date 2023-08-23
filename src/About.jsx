@@ -20,7 +20,7 @@ export default function About() {
                 Współpracujemy z firmami:<br/>
                 Grinea Rzeszów, Erbet, Ersbet, Grimbud, Bryksy Kraków, Gt Construction, Express Concurent.
             </p>
-            <div className='gallery'>
+            <div className='partners'>
                 <a href="https://grinea.eu/pl/" target="_blank" rel="noreferrer"><img src={Grinea} alt="Grinea logo"/></a>
                 <a href="https://www.erbet.pl/" target="_blank" rel="noreferrer"><img src={Erbet} alt="Erbet logo"/></a>
                 <a href="https://ersbet.pl/" target="_blank" rel="noreferrer"><img src={Ersbet} alt="Ersbet logo"/></a>
