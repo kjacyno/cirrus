@@ -71,6 +71,10 @@
 }
 
 
+.MuiTab-root{
+  overflow: unset;
+}
+
 .header-logo {
   margin-top: 1rem;
   display: flex;
@@ -88,10 +92,11 @@
 .text-flex {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
 
   p {
-    width: 55%;
+    width: 10rem;
+    margin-left: 4rem;
 
     a {
       text-decoration: none;
@@ -106,11 +111,9 @@
 }
 
 .partners {
+  width: 100%;
   margin: 2rem 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
+text-align: center;
   img {
     width: auto;
     height: 50px;
@@ -169,12 +172,5 @@
   .full-screen {
     height: auto;
     width: 95vw;
-  }
-  .text-flex {
-    padding: 0 1.5rem;
-
-    p {
-      width: 60%;
-    }
   }
 }

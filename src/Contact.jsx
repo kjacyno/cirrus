@@ -5,14 +5,10 @@ export default function Contact() {
   return (
     <Box
       sx={{
-        width: {
-            xs: '100%',
-            sm: '100%',
-            md: '50%',
-            lg: '30%',
-            xl: '30%',
-          },
-        margin: 'auto',
+        display: 'flex',
+          alignItem: 'center',
+          justifyContent: 'center',
+          flexDirection: 'column'
       }}
     >
       <div className="text-flex">

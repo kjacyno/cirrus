@@ -25,9 +25,7 @@ const theme = createTheme({
 
 function App() {
     return (
-        <Container sx={{
-            paddingTop: '1rem', maxWidth: '100vw',
-        }}>
+        <Container>
             <ThemeProvider theme={theme}>
                 <Header/>
                 <Box
