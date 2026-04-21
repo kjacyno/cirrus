@@ -1,0 +1,176 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap');
+
+* {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  font-size: 1.2rem;
+}
+
+
+.landing-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-image: url("/src/assets/clouds.jpg");
+  background-size: cover;
+  background-origin: border-box;
+  background-clip: padding-box;
+  background-repeat: no-repeat;
+  background-position: center;
+  opacity: 0;
+
+  animation: fadein 5s forwards, slidein 50s infinite alternate;
+  -webkit-animation: fadein 5s forwards, slidein 50s infinite alternate;
+  position: relative;
+  box-shadow: inset 0px 0px 15px 20px rgba(255, 255, 255, 1);
+
+  img {
+    width: 25%;
+  }
+}
+
+@keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes slidein {
+  from {
+    background-position: top;
+    background-size: 3000px;
+  }
+  to {
+    background-position: -100px 0px;
+    background-size: 2750px;
+  }
+}
+
+@keyframes slidein {
+  from {
+    background-position: top;
+    background-size: 3000px;
+  }
+  to {
+    background-position: -100px 0px;
+    background-size: 2750px;
+  }
+}
+
+
+.MuiTab-root{
+  overflow: unset;
+}
+
+.header-logo {
+  margin-top: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+
+  img {
+    width: 30vw;
+    height: auto;
+    padding: 1rem;
+  }
+}
+
+.text-flex {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  p {
+    width: 10rem;
+    margin-left: 4rem;
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+  }
+
+}
+
+.text-info {
+  margin: 0 auto;
+}
+
+.partners {
+  width: 100%;
+  margin: 2rem 0;
+text-align: center;
+  img {
+    width: auto;
+    height: 50px;
+    margin: 1rem;
+  }
+}
+
+.full-screen {
+  height: auto;
+  width: 80vw;
+}
+
+.MuiImageListItemBar-root {
+  height: auto;
+}
+
+.MuiImageListItemBar-titleWrap {
+  width: 100%;
+  height: auto;
+
+  .MuiImageListItemBar-title {
+    white-space: normal;
+    overflow-wrap: normal;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  * {
+    font-size: 1.1rem;
+  }
+  .landing-box {
+    height: 50vh;
+
+    img {
+      width: 50%;
+    }
+  }
+  .header-logo img {
+    width: 80vw;
+  }
+  .partners {
+    margin: 1rem 0;
+    display: block;
+    text-align: center;
+
+    img {
+      width: auto;
+      height: 30px;
+      margin: 1rem .5rem;
+    }
+  }
+  .full-screen {
+    height: auto;
+    width: 95vw;
+  }
+}
