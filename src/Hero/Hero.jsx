@@ -3,16 +3,58 @@ import Rakowiecka from '/src/assets/krakow-rakowiecka.jpg'
 /** @type string */
 import CirrusLogo from '/src/assets/logo-white-transp.png'
 import { Button, Stack, Typography } from '@mui/material'
+import ShieldOutlinedIcon from '@mui/icons-material/ShieldOutlined'
+import ApartmentOutlinedIcon from '@mui/icons-material/ApartmentOutlined'
+import GroupsOutlinedIcon from '@mui/icons-material/GroupsOutlined'
 
 export const Hero = () => {
+    const iconItems = [
+        {
+            Icon: ShieldOutlinedIcon,
+            value: '15+',
+            label: 'lat doświadczenia',
+        },
+        {
+            Icon: ApartmentOutlinedIcon,
+            value: '100+',
+            label: 'zrealizowanych inwestycji',
+        },
+        {
+            Icon: GroupsOutlinedIcon,
+            value: '100%',
+            label: 'zaangażowania',
+        },
+    ]
+    const navButtons = [
+        {
+            label: 'o firmie',
+            scrollValue: 'o-firmie',
+        },
+        {
+            label: 'realizacje',
+            scrollValue: 'realizacje',
+        },
+        {
+            label: 'kontakt',
+            scrollValue: 'kontakt',
+        },
+    ]
     return (
         <Stack
+            id={'hero-component'}
             sx={{
                 position: 'relative',
-                height: {xs: 340, sm: 340, md: 400},
                 width: '100%',
                 overflow: 'hidden',
                 minWidth: 360,
+                px: {
+                    xs: 2,
+                    sm: 4,
+                },
+                py: {
+                    xs: 2,
+                    sm: 4,
+                },
             }}
         >
             <Box
@@ -24,19 +66,14 @@ export const Hero = () => {
                     top: 0,
                     right: 0,
                     width: '50%',
-                    height: '100%',
                     objectFit: 'cover',
+                    height: '100%',
                     objectPosition: '50% 50%',
-                    transform: {
-                        xs: 'scale(1.8)',
-                        sm: 'scale(1.2)',
-                        md: 'scale(1)',
-                    },
-                    transition: 'transform 0.2s ease-in',
                 }}
             />
 
             <Box
+                className={'gradient'}
                 sx={{
                     position: 'absolute',
                     inset: 0,
@@ -51,30 +88,20 @@ export const Hero = () => {
                 }}
             />
             <Stack
+                className={'top-row'}
                 direction='row'
                 sx={{
-                    position: 'relative',
                     zIndex: 2,
-                    height: {
-                        xs: '70%',
-                        md: '50%',
-                    },
+                    height: '30%',
                     alignItems: 'flex-start',
                     justifyContent: {
                         sm: 'flex-start',
                     },
-                    pl: {
-                        xs: 2,
-                        sm: 4,
-                    },
                     maxWidth: '100%',
-                    pt: {
-                        xs: 2,
-                        sm: 4,
-                    },
                 }}
             >
                 <Box
+                    component='img'
                     sx={{
                         width: {
                             xs: '7rem',
@@ -88,105 +115,19 @@ export const Hero = () => {
                             xs: 1,
                             sm: 6,
                         },
+                        objectFit: 'cover',
                     }}
-                >
-                    <img
-                        width={'100%'}
-                        height={'auto'}
-                        src={CirrusLogo}
-                        alt='cirrus logo'
-                    />
-                    <Box
-                        sx={{
-                            position: 'absolute',
-                            top: {
-                                xs: 70,
-                                sm: 146,
-                            },
-                            left: 0,
-                            zIndex: 2,
-                            height: '100%',
-                            display: 'flex',
-                            flexDirection: 'column',
-                            pl: {
-                                xs: 1,
-                                sm: 4,
-                            },
-                            maxWidth: '70%',
-                        }}
-                    >
-                        <Typography
-                            color={'textSecondary'}
-                            sx={{
-                                fontSize: (theme) =>
-                                    theme.typography.customSizes,
-                                display: 'flex',
-                                alignItems: 'center',
-                                '&::before': {
-                                    content: '""',
-                                    width: 20,
-                                    height: 2,
-                                    backgroundColor: 'secondary.main',
-                                    mr: 1,
-                                    display: 'inline-block',
-                                },
-                            }}
-                        >
-                            FIRMA BUDOWLANA CIRRUS
-                        </Typography>
-                        <Typography
-                            variant='h1'
-                            color='textWhite'
-                            sx={{
-                                textTransform: 'uppercase',
-                                position: 'relative',
-                                top: 12,
-                            }}
-                        >
-                            zaufany
-                        </Typography>
-                        <Typography
-                            variant='h1'
-                            color={'textSecondary'}
-                            sx={{
-                                position: 'relative',
-                                top: 12,
-                            }}
-                        >
-                            i solidny
-                        </Typography>
-                        <Typography
-                            variant='h1'
-                            color={'textWhite'}
-                            sx={{
-                                position: 'relative',
-                                top: 12,
-                            }}
-                        >
-                            partner
-                        </Typography>
-                        <Typography
-                            variant='body2'
-                            color={'textDiesel'}
-                            sx={{
-                                pt: 1,
-                            }}
-                        >
-                            Kompleksowa realizacja inwestycji budowlanych.
-                            <br />
-                            Jakość, terminowość i bezpieczeństwo
-                            <br />
-                            na każdym etapie budowy
-                        </Typography>
-                    </Box>
-                </Box>
+                    src={CirrusLogo}
+                    alt='cirrus logo'
+                />
                 <Stack
+                    className={'nav-buttons'}
                     direction='row'
                     sx={{
                         width: {
                             xs: '65%',
                             md: '60%',
-                            lg: '75%',
+                            lg: '65%',
                         },
                         justifyContent: 'space-between',
                         ml: {
@@ -197,54 +138,165 @@ export const Hero = () => {
                         },
                     }}
                 >
-                    <Button
-                        variant='text'
-                        sx={{
-                            justifyContent: 'left',
-                            p: 0,
-                        }}
-                    >
-                        <Typography
-                            color={'textWhite'}
-                            variant='body1'
-                            align={'left'}
+                    {navButtons.map(({ label, scrollValue }, index) => (
+                        <Button
+                            key={index}
+                            variant='text'
                             sx={{
-                                fontSize: (theme) =>
-                                    theme.typography.customSizes,
-                                textShadow: '0px 0px 3px rgba(149, 2, 2, 1)',
+                                justifyContent: 'left',
+                                p: 0,
+                            }}
+                            onClick={() => {
+                                const target = document.getElementById(scrollValue)
+                                 if (target){
+                                      target.scrollIntoView({behavior: 'smooth'})
+                                 }
                             }}
                         >
-                            {' '}
-                            O FIRMIE
-                        </Typography>
-                    </Button>
-                    <Button variant='text'>
-                        <Typography
-                            color={'textWhite'}
-                            variant='body1'
-                            sx={{
-                                fontSize: (theme) =>
-                                    theme.typography.customSizes,
-                                textShadow: '0px 0px 3px  rgba(149, 2, 2, 1)',
-                            }}
+                            <Typography
+                                color={'textWhite'}
+                                align={'left'}
+                                sx={{
+                                    fontSize: (theme) =>
+                                        theme.typography.customSizes,
+                                    textShadow:
+                                        '0px 0px 3px rgba(149, 2, 2, 1)',
+                                }}
+                            >
+                                {label}
+                            </Typography>
+                        </Button>
+                    ))}
+                </Stack>
+            </Stack>
+            <Stack
+                className={'all-text'}
+                spacing={1}
+                sx={{
+                    zIndex: 2,
+                    pt: 4,
+                    minWidth: '60%',
+                    width: '100%',
+                }}
+            >
+                <Typography
+                    color={'textSecondary'}
+                    sx={{
+                        fontSize: (theme) => theme.typography.customSizes,
+                        display: 'flex',
+                        alignItems: 'center',
+                        '&::before': {
+                            content: '""',
+                            width: 20,
+                            height: 2,
+                            backgroundColor: 'secondary.main',
+                            mr: 1,
+                            display: 'inline-block',
+                        },
+                    }}
+                >
+                    FIRMA BUDOWLANA CIRRUS
+                </Typography>
+                <Stack
+                    className={'bold-subtitle'}
+                    direction={{ lg: 'row' }}
+                    spacing={4}
+                    sx={{
+                        textTransform: 'uppercase',
+                        position: 'relative',
+                        top: 12,
+                        '& .MuiTypography-root': {
+                            fontWeight: 600,
+                        },
+                    }}
+                >
+                    <Typography variant='h3' color='textWhite'>
+                        solidny
+                    </Typography>
+                    <Typography variant='h3' color={'textSecondary'}>
+                        i zaufany
+                    </Typography>
+                    <Typography variant='h3' color={'textWhite'}>
+                        partner
+                    </Typography>
+                </Stack>
+                <Typography
+                    variant='subtitle1'
+                    color={'textDiesel'}
+                    sx={{
+                        pt: 3,
+                    }}
+                >
+                    Kompleksowa realizacja inwestycji budowlanych.
+                    <br />
+                    Jakość, terminowość i bezpieczeństwo na każdym etapie budowy
+                </Typography>
+                <Stack
+                    className={'icons-below'}
+                    direction='row'
+                    sx={{
+                        minHeight: '2rem',
+                        pt: 3,
+                        gap: {
+                            xs: 1,
+                            sm: 2,
+                            md: 3,
+                        },
+                        justifyContent: 'space-between',
+                        width: {xs: '90%' , md:'50%'},
+                    }}
+                >
+                    {iconItems.map(({ Icon, value, label }, index) => (
+                        <Stack
+                            key={index}
+                            direction='row'
+                            spacing={1}
+                            sx={{ alignItems: 'center' }}
                         >
-                            {' '}
-                            REALIZACJE
-                        </Typography>
-                    </Button>
-                    <Button variant='text'>
-                        <Typography
-                            color={'textWhite'}
-                            variant='body1'
-                            sx={{
-                                fontSize: (theme) =>
-                                    theme.typography.customSizes,
-                                textShadow: '0px 0px 3px rgba(149, 2, 2,1)',
-                            }}
-                        >
-                            KONTAKT
-                        </Typography>
-                    </Button>
+                            <Icon
+                                sx={{
+                                    color: 'secondary.main',
+                                    mr: 1,
+                                    fontSize: {
+                                        xs: 18,
+                                        sm: 22,
+                                        md: 40,
+                                    },
+                                }}
+                            />
+                            <Stack sx={{ height: '100%', width: '100%' }}>
+                                <Typography
+                                    color={'textWhite'}
+                                    sx={{
+                                        fontWeight: 600,
+                                        fontSize: {
+                                            xs: 12,
+                                            sm: 14,
+                                            md: 18,
+                                        },
+                                        lineHeight: 1.5,
+                                    }}
+                                >
+                                    {value}
+                                </Typography>
+                                <Typography
+                                    variant='body2'
+                                    color={'textWhite'}
+                                    sx={{
+                                        textTransform: 'uppercase',
+                                        fontSize: {
+                                            xs: 8,
+                                            sm: 10,
+                                            md: 12,
+                                        },
+                                        lineHeight: 1.2,
+                                    }}
+                                >
+                                    {label}
+                                </Typography>
+                            </Stack>
+                        </Stack>
+                    ))}
                 </Stack>
             </Stack>
         </Stack>

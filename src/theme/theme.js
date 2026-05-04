@@ -19,15 +19,6 @@ export const theme = createTheme({
         fontSize: 16,
         fontFamily: '"Montserrat", "Roboto", "Arial", sans-serif',
         textAlign: 'left',
-        h1: {
-            fontWeight: 700,
-            fontSize: 35,
-            textTransform: 'uppercase',
-        },
-        body1: { fontWeight: 500 },
-        body2: { fontWeight: 400, fontSize: 14 },
-        // subtitle1,
-        // subtitle2
         customSizes: {
             xs: '0.8rem',
             sm: '1rem',
