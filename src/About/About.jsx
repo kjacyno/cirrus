@@ -1,10 +1,11 @@
 import Salwator from '/src/assets/mikolow-salwator.jpg'
-import { Grid, Stack, Typography } from '@mui/material'
+import {Grid, Stack, Typography} from '@mui/material'
 import Box from '@mui/material/Box'
 import WorkspacePremiumOutlinedIcon from '@mui/icons-material/WorkspacePremiumOutlined'
 import AccessTimeOutlinedIcon from '@mui/icons-material/AccessTimeOutlined'
 import EngineeringOutlinedIcon from '@mui/icons-material/EngineeringOutlined'
 import VerifiedUserOutlinedIcon from '@mui/icons-material/VerifiedUserOutlined'
+import {PartnersCarousel} from "/src/About/PartnersCarousel/PartnersCarousel.jsx";
 
 export const About = () => {
     const summaryBoxes = [
@@ -29,11 +30,11 @@ export const About = () => {
             value: 'Bezpieczne i zgodne z normami realizacje',
         },
     ]
+    
     return (
         <Grid
             id={'o-firmie'}
             container
-            spacing={4}
             sx={{
                 width: '100%',
                 px: {
@@ -116,7 +117,7 @@ export const About = () => {
                     </Box>
                 </Box>
             </Grid>
-            <Grid size={{ xs: 12, md: 7 }}>
+            <Grid size={{ xs: 12, md: 7 }} sx={{pt: {xs: 4, md:0}, pl: {md:4}}}>
                 <Stack>
                     <Typography
                         color='textSecondary'
@@ -168,13 +169,13 @@ export const About = () => {
                     direction='row'
                     spacing={{ xs: 1, sm: 1, md: 2 }}
                     sx={{
-                        mt: { xs: 4, md: 6, lg: 8 },
+                        mt: { xs: 2, sm:4, md: 6, lg: 8 },
+                        mb: { sm: 6, lg: 8 },
                         position: {
                             xs: 'relative',
                             lg: 'static',
                         },
                         right: { xs: '5%', sm: '0%', md: '50%' },
-                        // left: { xs: 100, md: -156, },
                         top: { xs: 10, md: 32 },
                         width: { md: '130%', lg: '100%' },
                     }}
@@ -225,6 +226,9 @@ export const About = () => {
                     ))}
                 </Stack>
             </Grid>
+             <Grid size={12} >
+                  <PartnersCarousel/>
+             </Grid>
         </Grid>
     )
 }
