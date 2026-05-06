@@ -3,6 +3,7 @@ import { ThemeProvider } from '@mui/material/styles'
 import { Hero } from './Hero/Hero.jsx'
 import { theme } from './theme/theme.js'
 import { About } from './About/About.jsx'
+import {Projects} from "/src/Projects/Projects.jsx";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
       {/*<BasicTabs/>*/}
       <Hero />
       <About />
+         <Projects />
       {/*</Box>*/}
     </ThemeProvider>
   )
