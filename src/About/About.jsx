@@ -226,7 +226,7 @@ export const About = () => {
                     ))}
                 </Stack>
             </Grid>
-             <Grid size={12} >
+             <Grid size={12} sx={{mb:1}} >
                   <PartnersCarousel/>
              </Grid>
         </Grid>

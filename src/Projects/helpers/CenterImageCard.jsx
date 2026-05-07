@@ -1,12 +1,10 @@
 import Box from '@mui/material/Box'
 import { IconButton } from '@mui/material'
 import ImageListItemBar from '@mui/material/ImageListItemBar'
-import ImageListItem from '@mui/material/ImageListItem'
-import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos'
-
+import ArrowForwardIcon from '@mui/icons-material/ArrowForward'
 export const CenterImageCard = ({ item }) => {
     return (
-        <ImageListItem sx={{ height: '45% !important' }}>
+        <Box sx={{ height: { md: '45%' }, position: 'relative' }}>
             <Box
                 component='img'
                 src={item.img}
@@ -25,12 +23,12 @@ export const CenterImageCard = ({ item }) => {
                         sx={{ color: 'rgba(255, 255, 255, 0.54)' }}
                         aria-label={`info about ${item.title}`}
                     >
-                        <ArrowForwardIosIcon />
+                        <ArrowForwardIcon sx={{ fontSize: 24 }} />
                     </IconButton>
                 }
                 onClick={() => console.log(item)}
                 sx={{ cursor: 'pointer' }}
             />
-        </ImageListItem>
+        </Box>
     )
 }
