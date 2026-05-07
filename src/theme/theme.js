@@ -20,8 +20,7 @@ export const theme = createTheme({
         fontFamily: '"Montserrat", "Roboto", "Arial", sans-serif',
         textAlign: 'left',
         customSizes: {
-            xs: '0.8rem',
-            sm: '1rem',
+            xs: '1rem',
             md: '1.2rem',
             lg: '1.5rem',
             xl: '1.5rem',

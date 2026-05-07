@@ -125,7 +125,7 @@ export const Hero = () => {
                     direction='row'
                     sx={{
                         width: {
-                            xs: '65%',
+                            xs: '70%',
                             md: '60%',
                             lg: '65%',
                         },
@@ -147,10 +147,13 @@ export const Hero = () => {
                                 p: 0,
                             }}
                             onClick={() => {
-                                const target = document.getElementById(scrollValue)
-                                 if (target){
-                                      target.scrollIntoView({behavior: 'smooth'})
-                                 }
+                                const target =
+                                    document.getElementById(scrollValue)
+                                if (target) {
+                                    target.scrollIntoView({
+                                        behavior: 'smooth',
+                                    })
+                                }
                             }}
                         >
                             <Typography
@@ -159,8 +162,11 @@ export const Hero = () => {
                                 sx={{
                                     fontSize: (theme) =>
                                         theme.typography.customSizes,
-                                    textShadow:
-                                        '0px 0px 3px rgba(149, 2, 2, 1)',
+                                    textShadow: `2px 2px 2px #950202,
+                                     -1px -1px 0 #950202,
+                                     1px -1px 0 #950202,
+                                     -1px 1px 0 #950202,
+                                     1px 1px 0 #950202`,
                                 }}
                             >
                                 {label}
@@ -243,7 +249,7 @@ export const Hero = () => {
                             md: 3,
                         },
                         justifyContent: 'space-between',
-                        width: {xs: '90%' , md:'50%'},
+                        width: { xs: '90%', md: '50%' },
                     }}
                 >
                     {iconItems.map(({ Icon, value, label }, index) => (
