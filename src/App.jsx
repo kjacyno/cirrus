@@ -4,6 +4,7 @@ import { Hero } from '/src/components/Hero/Hero.jsx'
 import { theme } from './theme/theme.js'
 import { About } from '/src/components/About/About.jsx'
 import {Projects} from "/src/components/Projects/Projects.jsx";
+import {Workflow} from "./components/Workflow/Workflow.jsx";
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
       <Hero />
       <About />
          <Projects />
+         <Workflow/>
       {/*</Box>*/}
     </ThemeProvider>
   )
