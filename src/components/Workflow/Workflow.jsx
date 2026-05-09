@@ -4,7 +4,6 @@ import ConstructionOutlinedIcon from '@mui/icons-material/ConstructionOutlined'
 import FactCheckOutlinedIcon from '@mui/icons-material/FactCheckOutlined'
 import RealEstateAgentOutlinedIcon from '@mui/icons-material/RealEstateAgentOutlined'
 import Box from '@mui/material/Box'
-import {Experience} from "/src/components/Workflow/Expierence.jsx";
 
 export const Workflow = () => {
     const workflowSteps = [
