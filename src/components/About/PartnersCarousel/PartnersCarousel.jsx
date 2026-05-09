@@ -31,7 +31,7 @@ export const PartnersCarousel = () => {
         slidesToShow: 4,
         slidesToScroll: 1,
         autoplay: true,
-        speed: 2000,
+        speed: 6000,
         autoplaySpeed: 2000,
         cssEase: 'linear',
     }

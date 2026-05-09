@@ -1,18 +1,17 @@
-import { Grid, Stack } from '@mui/material'
+import { Grid, IconButton, Stack } from '@mui/material'
 import CloseIcon from '@mui/icons-material/Close'
-import { SideImageCard } from '/src/Projects/helpers/SideImageCard.jsx'
-import { GalleryButtons } from '/src/Projects/helpers/GalleryButtons.jsx'
-import { GalleryLoader } from '/src/Projects/helpers/GalleryLoader.jsx'
+import { SideImageCard } from '/src/components/Projects/helpers/SideImageCard.jsx'
+import { GalleryButtons } from '/src/components/Projects/helpers/GalleryButtons.jsx'
+import { GalleryLoader } from '/src/components/Projects/helpers/GalleryLoader.jsx'
 
-export const ImageGallery = ({
+export const MainImageGallery = ({
     setGalleryOpen,
     activeImageGroup,
     setActiveImageGroup,
-    imagesChunk,
+    galleryImages,
     loaderOpen,
 }) => {
-  
-     return (
+    return (
         <>
             <Grid size={12} sx={{ height: 'fit-content' }}>
                 <Stack
@@ -24,14 +23,15 @@ export const ImageGallery = ({
                         mb: 3,
                     }}
                 >
-                    <CloseIcon
-                        color={'white'}
-                        onClick={() => setGalleryOpen(false)}
-                        sx={{
-                            cursor: 'pointer',
-                            fontSize: '2rem',
-                        }}
-                    />
+                    <IconButton onClick={() => setGalleryOpen(false)}>
+                        <CloseIcon
+                           
+                            sx={{
+                                fontSize: '2rem',
+                                 color:'white'
+                            }}
+                        />
+                    </IconButton>
                 </Stack>
                 <GalleryButtons
                     setActiveImageGroup={setActiveImageGroup}
@@ -43,18 +43,22 @@ export const ImageGallery = ({
                 spacing={4}
                 sx={{
                     position: 'relative',
-                    minHeight: '500px', // Stable height for the spinner to live in
+                    minHeight: 600,
                     mt: 2,
-                    // opacity: loaderOpen ? 0 : 1,
-                    // transition: 'opacity 0.3s ease-in-out',
                 }}
             >
                 <GalleryLoader loaderOpen={loaderOpen} />
-                {imagesChunk.map((item, index) => (
+
+                {galleryImages.map((item, index) => (
                     <Grid
                         key={index}
                         size={{ xs: 12, sm: 6, md: 3 }}
-                        sx={{ height: 300 }}
+                        sx={{
+                            height: 300,
+                            transition: 'opacity 0.3s ease-in-out',
+                            opacity: loaderOpen ? 0 : 1,
+                            visibility: loaderOpen ? 'hidden' : 'visible',
+                        }}
                     >
                         <SideImageCard item={item} />
                     </Grid>

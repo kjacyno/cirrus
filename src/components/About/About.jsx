@@ -5,7 +5,7 @@ import WorkspacePremiumOutlinedIcon from '@mui/icons-material/WorkspacePremiumOu
 import AccessTimeOutlinedIcon from '@mui/icons-material/AccessTimeOutlined'
 import EngineeringOutlinedIcon from '@mui/icons-material/EngineeringOutlined'
 import VerifiedUserOutlinedIcon from '@mui/icons-material/VerifiedUserOutlined'
-import {PartnersCarousel} from "/src/About/PartnersCarousel/PartnersCarousel.jsx";
+import {PartnersCarousel} from "/src/components/About/PartnersCarousel/PartnersCarousel.jsx";
 
 export const About = () => {
     const summaryBoxes = [
@@ -33,7 +33,7 @@ export const About = () => {
     
     return (
         <Grid
-            id={'o-firmie'}
+            id={'about'}
             container
             sx={{
                 width: '100%',
@@ -117,7 +117,10 @@ export const About = () => {
                     </Box>
                 </Box>
             </Grid>
-            <Grid size={{ xs: 12, md: 7 }} sx={{pt: {xs: 4, md:0}, pl: {md:4}}}>
+            <Grid
+                size={{ xs: 12, md: 7 }}
+                sx={{ pt: { xs: 4, md: 0 }, pl: { md: 4 } }}
+            >
                 <Stack>
                     <Typography
                         color='textSecondary'
@@ -169,7 +172,7 @@ export const About = () => {
                     direction='row'
                     spacing={{ xs: 1, sm: 1, md: 2 }}
                     sx={{
-                        mt: { xs: 2, sm:4, md: 6, lg: 8 },
+                        mt: { xs: 2, sm: 4, md: 6, lg: 8 },
                         mb: { sm: 6, lg: 8 },
                         position: {
                             xs: 'relative',
@@ -226,9 +229,9 @@ export const About = () => {
                     ))}
                 </Stack>
             </Grid>
-             <Grid size={12} sx={{mb:1}} >
-                  <PartnersCarousel/>
-             </Grid>
+            <Grid size={12} sx={{ mb: 1 }}>
+                <PartnersCarousel />
+            </Grid>
         </Grid>
     )
 }

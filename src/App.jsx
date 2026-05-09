@@ -1,9 +1,9 @@
 // import "./App.scss";
 import { ThemeProvider } from '@mui/material/styles'
-import { Hero } from './Hero/Hero.jsx'
+import { Hero } from '/src/components/Hero/Hero.jsx'
 import { theme } from './theme/theme.js'
-import { About } from './About/About.jsx'
-import {Projects} from "/src/Projects/Projects.jsx";
+import { About } from '/src/components/About/About.jsx'
+import {Projects} from "/src/components/Projects/Projects.jsx";
 
 function App() {
   return (

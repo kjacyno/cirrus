@@ -28,15 +28,15 @@ export const Hero = () => {
     const navButtons = [
         {
             label: 'o firmie',
-            scrollValue: 'o-firmie',
+            scrollValue: 'about',
         },
         {
             label: 'realizacje',
-            scrollValue: 'realizacje',
+            scrollValue: 'projects',
         },
         {
             label: 'kontakt',
-            scrollValue: 'kontakt',
+            scrollValue: 'contact',
         },
     ]
     return (

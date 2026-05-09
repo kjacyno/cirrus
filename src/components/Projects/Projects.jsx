@@ -1,49 +1,54 @@
 import { Button, Grid, Modal, Stack, Typography } from '@mui/material'
 import { useEffect, useState } from 'react'
-import { imageList } from './helpers/imageList.js'
 import { CenterImageCard } from './helpers/CenterImageCard.jsx'
 import { SideImageCard } from './helpers/SideImageCard.jsx'
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward'
-import { ImageGallery } from './ImageGallery/ImageGallery.jsx'
-import { GalleryButtons } from '/src/Projects/helpers/GalleryButtons.jsx'
-import { GalleryLoader } from '/src/Projects/helpers/GalleryLoader.jsx'
+import { MainImageGallery } from './ImageGallery/MainImageGallery.jsx'
+import { GalleryButtons } from '/src/components/Projects/helpers/GalleryButtons.jsx'
+import { GalleryLoader } from '/src/components/Projects/helpers/GalleryLoader.jsx'
+import { getImageList } from '/src/components/Projects/helpers/getImageList.js'
 
 export const Projects = () => {
     const [activeImageGroup, setActiveImageGroup] = useState('wszystkie')
     const [loaderOpen, setLoaderOpen] = useState(false)
     const [galleryOpen, setGalleryOpen] = useState(false)
-    const [imagesChunk, setImagesChunk] = useState([])
-    useEffect(() => {
-         const clearImages = () => setImagesChunk([])
-        loaderOpen && clearImages()
-    }, [loaderOpen, galleryOpen])
-    useEffect(() => {
-        const getFilteredList = async () => {
-            setImagesChunk([])
+    const [allImages, setAllImages] = useState([])
+    const [previewImages, setPreviewImages] = useState([])
+    const [galleryImages, setGalleryImages] = useState([])
 
+    useEffect(() => {
+        const loadInitialData = async () => {
             setLoaderOpen(true)
 
-            const filtered = imageList.filter((image) =>
+            const data = await getImageList()
+            setAllImages(data)
+        }
+        loadInitialData()
+    }, [])
+
+    useEffect(() => {
+        const getFilteredList = async () => {
+            setLoaderOpen(true)
+
+            if (allImages.length === 0) return
+
+            const filtered = allImages.filter((image) =>
                 activeImageGroup === 'wszystkie'
                     ? true
                     : image.groups.includes(activeImageGroup)
             )
-            const imagesToMap = galleryOpen ? filtered : [filtered.slice(0, 4)]
-            await new Promise((resolve) => setTimeout(resolve, 50))
+            setPreviewImages([filtered.slice(0, 4)]) // Always chunked
+            setGalleryImages(filtered)
 
-            setImagesChunk(imagesToMap)
-
-            // 4. Wait for the remainder of your 1s timeout
             await new Promise((resolve) => setTimeout(resolve, 1000))
-
             setLoaderOpen(false)
         }
         getFilteredList()
-    }, [activeImageGroup, galleryOpen])
-    
+    }, [activeImageGroup, galleryOpen, allImages])
+
     return (
         <Grid
-            id='realizacje'
+            id='projects'
             container
             spacing={2}
             sx={{
@@ -94,7 +99,7 @@ export const Projects = () => {
                 }}
             >
                 <GalleryLoader loaderOpen={loaderOpen} />
-                {imagesChunk.map((item, index) => (
+                {previewImages.map((item, index) => (
                     <Stack
                         direction={{ xs: 'column', md: 'row' }}
                         key={index}
@@ -102,6 +107,9 @@ export const Projects = () => {
                         sx={{
                             height: { xs: 'auto', md: 400 },
                             width: '100%',
+                            transition: 'opacity 0.3s ease-in-out',
+                            opacity: loaderOpen ? 0 : 1,
+                            visibility: loaderOpen ? 'hidden' : 'visible',
                         }}
                     >
                         {item[0] && <SideImageCard item={item[0]} />}
@@ -126,8 +134,6 @@ export const Projects = () => {
                 <Button
                     variant={'outlined'}
                     onClick={() => {
-                        setImagesChunk([])
-
                         setGalleryOpen(true)
                     }}
                     sx={{ borderColor: 'white' }}
@@ -154,12 +160,16 @@ export const Projects = () => {
                 aria-labelledby='modal-modal-gallery'
                 aria-describedby='modal-modal-projects-gallery'
                 open={galleryOpen}
-                onClose={() => setGalleryOpen(false)}
+                onClose={() => {
+                    setLoaderOpen(true)
+                    setGalleryOpen(false)
+                }}
             >
                 <Grid
                     container
                     sx={{
                         width: '100%',
+                        maxHeight: '100vh',
                         px: {
                             xs: 3,
                             sm: 4,
@@ -172,11 +182,11 @@ export const Projects = () => {
                     }}
                     spacing={4}
                 >
-                    <ImageGallery
+                    <MainImageGallery
                         setGalleryOpen={setGalleryOpen}
                         activeImageGroup={activeImageGroup}
                         setActiveImageGroup={setActiveImageGroup}
-                        imagesChunk={imagesChunk}
+                        galleryImages={galleryImages}
                         loaderOpen={loaderOpen}
                     />
                 </Grid>
