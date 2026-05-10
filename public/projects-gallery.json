@@ -1,0 +1,143 @@
+[
+    {
+        "img": "dom-ns.jpg",
+        "title": "Dom jednorodzinny, ul.Chruściela, Nowy Sącz",
+        "groups": ["mieszkaniowe", "wszystkie"],
+        "folder": "dom-ns",
+        "gallery": ["dom-ns.jpg", "dom-ns1.jpg", "dom-ns2.jpg"]
+    },
+    {
+        "img": "krakow-rakowiecka.jpg",
+        "title": "Osiedle mieszkaniowe, ul.Rakowiecka, Kraków",
+        "groups": ["mieszkaniowe", "wszystkie"],
+        "folder": "krakow-rakowiecka",
+        "gallery": [
+            "krakow-rakowiecka1.jpg",
+            "krakow-rakowiecka2.jpg",
+            "krakow-rakowiecka3.jpg",
+            "krakow-rakowiecka4.jpg",
+            "krakow-rakowiecka5.jpg",
+            "krakow-rakowiecka6.jpg",
+            "krakow-rakowiecka7.jpg",
+            "krakow-rakowiecka8.jpg"
+        ]
+    },
+    {
+        "img": "RudaSlaska.jpg",
+        "title": "Budynek mieszkalno-usługowy, Ruda Śląska",
+        "groups": ["mieszkaniowe", "komercyjne", "wszystkie"],
+        "folder": "RudaSlaska",
+        "gallery": [
+            "ruda-slaska1.jpg",
+            "ruda-slaska2.jpg",
+            "ruda-slaska3.jpg",
+            "ruda-slaska4.jpg",
+            "ruda-slaska5.jpg"
+        ]
+    },
+    {
+        "img": "Rytro-przedszkole.jpg",
+        "title": "Przedszkole, Rytro",
+        "groups": ["komercyjne", "wszystkie"]
+    },
+    {
+        "img": "bierun-atut.jpg",
+        "title": "C.H. Atut, Bieruń",
+        "groups": ["komercyjne", "remonty", "wszystkie"],
+        "folder": "bierun-atut",
+        "gallery": [
+            "bierun-atut1.jpg",
+            "bierun-atut2.jpg",
+            "bierun-atut3.jpg",
+            "bierun-atut4.jpg",
+            "bierun-atut5.jpg",
+            "bierun-atut6.jpg",
+            "bierun-atut7.jpg"
+        ]
+    },
+    {
+        "img": "chorow-karczma-elewacja.jpg",
+        "title": "Karczma, lunapark Legendia, Chorzów",
+        "groups": ["komercyjne", "wszystkie"]
+    },
+    {
+        "img": "chorzow-stacja-paliw.jpg",
+        "title": "Stacja paliw, Chorzów",
+        "groups": ["komercyjne", "wszystkie"]
+    },
+    {
+        "img": "czarna-owca-hotel-piwniczna.JPG",
+        "title": "Hotel Piwniczna SPA&Conference, Piwniczna - Zdroj",
+        "groups": ["komercyjne", "remonty", "wszystkie"],
+        "folder": "czarna-owca-hotel-piwniczna",
+        "gallery":[
+            "czarna-owca1.jpg",
+            "czarna-owca2.jpg",
+            "czarna-owca3.jpg",
+            "czarna-owca4.jpg",
+            "czarna-owca5.jpg",
+            "czarna-owca6.jpg",
+            "czarna-owca7.jpg"
+        ]
+    },
+    {
+        "img": "palacyk-ns.jpg",
+        "title": "Pałacyk, Nowy Sącz",
+        "groups": ["mieszkaniowe", "wszystkie"]
+    },
+    {
+        "img": "drukarnia-flexergis.jpg",
+        "title": "Drukarnia Flexergis, Nowy Sącz",
+        "groups": ["komercyjne", "wszystkie"],
+        "folder": "drukarnia-flexergis",
+        "gallery": [
+            "drukarnia1.jpg",
+            "drukarnia2.jpg",
+            "drukarnia3.jpg",
+            "drukarnia4.jpg"
+        ]
+    },
+    {
+        "img": "golkowice-biblioteka.jpg",
+        "title": "Powiatowa i Miejsko-Gminna Biblioteka Publiczna im. Wiktora Bazielicha w Starym Sączu – Filia w Przysietnicy, Gołkowice Górne",
+        "groups": ["komercyjne", "wszystkie"]
+    },
+    {
+        "img": "krakow-pawia.jpg",
+        "title": "Budynek usługowy, ul.Pawia, Kraków",
+        "groups": ["komercyjne", "remonty", "wszystkie"],
+        "folder": "krakow-pawia",
+        "gallery": [
+            "pawia1.jpg",
+            "pawia2.jpg",
+            "pawia3.jpg"
+        ]
+    },
+    {
+        "img": "mikolow-salwator.jpg",
+        "title": "Dom Seniora Salwator Park, Mikołów",
+        "groups": ["komercyjne", "mieszkaniowe", "remonty", "wszystkie"],
+        "folder": "mikolow-salwator",
+        "gallery": [
+            "mikolow-salwator1.jpg",
+            "mikolow-salwator2.jpg",
+            "mikolow-salwator3.jpg",
+            "mikolow-salwator4.jpg",
+            "mikolow-salwator5.jpg",
+            "mikolow-salwator6.jpg",
+            "mikolow-salwator7.jpg",
+            "mikolow-salwator8.jpg",
+            "mikolow-salwator9.jpg"
+        ]
+    },
+    {
+        "img": "piwniczanka.jpg",
+        "title": " Hala i budynek administracyjno-biurowy, ul.Zdrojowa, Piwniczna-Zdrój",
+        "groups": ["komercyjne", "wszystkie"],
+        "folder": "piwniczanka",
+        "gallery": [
+            "piwniczanka1.jpg",
+            "piwniczanka2.jpg"
+        ]
+    }
+]

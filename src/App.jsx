@@ -1,44 +1,24 @@
-import BasicTabs from "./TabPanel";
-import "./App.scss";
-import Box from "@mui/material/Box";
-import Container from "@mui/material/Container";
-import Header from "./Header";
-import {createTheme, ThemeProvider} from "@mui/material/styles";
-
-const theme = createTheme({
-    palette: {
-        primary: {
-            main: '#950202'
-        },
-        secondary: {
-            main: '#EB0010'
-        },
-        text: {
-            primary: '#000000',
-            secondary: '#000000'
-        }
-    },
-    typography: {
-        fontSize: 16
-    }
-});
+import { ThemeProvider } from '@mui/material/styles'
+import { Hero } from '/src/components/Hero/Hero.jsx'
+import { theme } from './theme/theme.js'
+import { About } from '/src/components/About/About.jsx'
+import { Projects } from '/src/components/Projects/Projects.jsx'
+import { Workflow } from './components/Workflow/Workflow.jsx'
+import { Experience } from '/src/components/Workflow/Expierence.jsx'
+import { Contact } from '/src/components/Contact/Contact.jsx'
+import { Footer } from '/src/components/Footer/Footer.jsx'
 
 function App() {
     return (
-        <Container>
-            <ThemeProvider theme={theme}>
-                <Header/>
-                <Box
-                    sx={{
-                        backgroundColor: "white",
-                        height: "auto",
-                        width: "100%",
-                    }}
-                >
-                    <BasicTabs/>
-                </Box>
-            </ThemeProvider>
-        </Container>
-    );
+        <ThemeProvider theme={theme}>
+            <Hero />
+            <About />
+            <Projects />
+            <Workflow />
+            <Experience />
+            <Contact />
+            <Footer />
+        </ThemeProvider>
+    )
 }
-export default App;
+export default App
