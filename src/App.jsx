@@ -6,6 +6,7 @@ import { About } from '/src/components/About/About.jsx'
 import {Projects} from "/src/components/Projects/Projects.jsx";
 import {Workflow} from "./components/Workflow/Workflow.jsx";
 import {Experience} from "/src/components/Workflow/Expierence.jsx";
+import {Contact} from "/src/components/Contact/Contact.jsx";
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
           <Projects />
           <Workflow />
           <Experience />
+           <Contact/>
 
           {/*</Box>*/}
       </ThemeProvider>
