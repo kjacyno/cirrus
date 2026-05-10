@@ -7,6 +7,7 @@ import {Projects} from "/src/components/Projects/Projects.jsx";
 import {Workflow} from "./components/Workflow/Workflow.jsx";
 import {Experience} from "/src/components/Workflow/Expierence.jsx";
 import {Contact} from "/src/components/Contact/Contact.jsx";
+import {Footer} from "/src/components/Footer/Footer.jsx";
 
 function App() {
   return (
@@ -25,7 +26,7 @@ function App() {
           <Workflow />
           <Experience />
            <Contact/>
-
+<Footer />
           {/*</Box>*/}
       </ThemeProvider>
   )
