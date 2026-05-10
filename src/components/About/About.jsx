@@ -22,7 +22,7 @@ export const About = () => {
         {
             Icon: EngineeringOutlinedIcon,
             label: 'Doświadczony zespół',
-            value: 'Wykfalifikowani specjaliści',
+            value: 'Wykwalifikowani specjaliści',
         },
         {
             Icon: VerifiedUserOutlinedIcon,
@@ -160,7 +160,7 @@ export const About = () => {
                         color='textPrimary'
                         sx={{ pt: 4 }}
                     >
-                        CIRRUS to fima, która od 1998 roku dostarcza kompleksowe
+                        CIRRUS to firma, która od 1998 roku dostarcza kompleksowe
                         usługi budowlane dla firm oraz instytucji. Nasza
                         specjalność to elewacje, wykończenia oraz budowa i
                         remonty budynków komercyjnych. Każdy projekt realizujemy

@@ -6,6 +6,7 @@ import { Button, Stack, Typography } from '@mui/material'
 import ShieldOutlinedIcon from '@mui/icons-material/ShieldOutlined'
 import ApartmentOutlinedIcon from '@mui/icons-material/ApartmentOutlined'
 import GroupsOutlinedIcon from '@mui/icons-material/GroupsOutlined'
+import {navButtons} from "/src/components/utils/navButtons.js";
 
 export const Hero = () => {
     const iconItems = [
@@ -25,20 +26,7 @@ export const Hero = () => {
             label: 'zaangażowania',
         },
     ]
-    const navButtons = [
-        {
-            label: 'o firmie',
-            scrollValue: 'about',
-        },
-        {
-            label: 'realizacje',
-            scrollValue: 'projects',
-        },
-        {
-            label: 'kontakt',
-            scrollValue: 'contact',
-        },
-    ]
+
     return (
         <Stack
             id={'hero-component'}

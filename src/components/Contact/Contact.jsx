@@ -9,15 +9,12 @@ export const Contact = () => {
             container
             sx={{
                 width: '100%',
-                px: {
-                    xs: 3,
-                    sm: 4,
-                },
-                py: { xs: 2, sm: 4, md: 8 },
+                px: 3,
+                py: 3,
                 position: 'relative',
             }}
         >
-            <Grid size={{ xs: 12, md: 6 }} sx={{ mb: 6 }}>
+            <Grid size={{ xs: 12, md: 6 }} sx={{ mb: {xs: 6, md: 2} }}>
                 <Stack spacing={2}>
                     <Typography
                         color={'textSecondary'}
@@ -37,7 +34,7 @@ export const Contact = () => {
                     >
                         Planujesz inwestycję budowlaną? Zrealizujmy ją razem.
                     </Typography>
-                    <Typography>
+                    <Typography variant={'h5'}>
                         Skontaktuj się z nami w celu omówienia projektu i
                         otrzymaj bezpłatną wycenę.
                     </Typography>
