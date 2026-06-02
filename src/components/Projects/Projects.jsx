@@ -52,6 +52,7 @@ export const Projects = () => {
             container
             spacing={2}
             sx={{
+                scrollMarginTop: '80px',
                 width: '100%',
                 px: {
                     xs: 3,

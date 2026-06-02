@@ -1,52 +1,26 @@
 import { Grid, Stack, Typography } from '@mui/material'
-import DesignServicesOutlinedIcon from '@mui/icons-material/DesignServicesOutlined'
-import ConstructionOutlinedIcon from '@mui/icons-material/ConstructionOutlined'
-import FactCheckOutlinedIcon from '@mui/icons-material/FactCheckOutlined'
-import RealEstateAgentOutlinedIcon from '@mui/icons-material/RealEstateAgentOutlined'
+
 import Box from '@mui/material/Box'
+import {workflowSteps} from '/src/components/utils/iconArrays.js'
 
 export const Workflow = () => {
-    const workflowSteps = [
-        {
-            Icon: DesignServicesOutlinedIcon,
-            step: '01',
-            label: 'Planowanie',
-            value: 'Analizujemy potrzeby i przygotowujemy ofertę',
-        },
-        {
-            Icon: ConstructionOutlinedIcon,
-            step: '02',
-            label: 'Budowa',
-            value: 'Realizujemy prace budowlane zgodnie z planem',
-        },
-        {
-            Icon: FactCheckOutlinedIcon,
-            step: '03',
-            label: 'Nadzór',
-            value: 'Kontrolujemy jakość na każdym etapie',
-        },
-        {
-            Icon: RealEstateAgentOutlinedIcon,
-            step: '04',
-            label: 'Odbiór',
-            value: 'Przekazujemy gotowy obiekt i zapewniamy wsparcie',
-        },
-    ]
+   
     return (
         <Grid
             id={'workflow'}
             container
+            spacing={2}
             sx={{
                 width: '100%',
                 px: {
                     xs: 3,
                     sm: 4,
                 },
-                py: { xs: 2, sm: 4, md: 4 },
+                py: { xs: 2, sm: 4 },
                 position: 'relative',
             }}
         >
-            <Grid size={{ xs: 12, md: 3 }}>
+            <Grid size={{ xs: 12,sm:12, md: 12 }}>
                 <Stack spacing={2}>
                     <Typography
                         color={'textSecondary'}
@@ -60,18 +34,17 @@ export const Workflow = () => {
                     </Typography>
 
                     <Typography
-                        variant={'h4'}
                         color={'textPrimary'}
-                        sx={{ fontWeight: 700, mb: 2 }}
+                        sx={{ fontSize: 32, fontWeight: 700, mb: 2 }}
                     >
                         Jak pracujemy?
                     </Typography>
                 </Stack>
             </Grid>
             {workflowSteps.map(({ Icon, step, label, value }, index) => (
-                <Grid size={{ xs: 12, md: 2.25 }} key={index}>
+                <Grid size={{ xs: 12, md: 3 }} key={index}>
                     <Stack
-                        direction={'row'}
+                        direction='row'
                         spacing={2}
                         sx={{ alignItems: 'center' }}
                     >
@@ -79,8 +52,8 @@ export const Workflow = () => {
                             sx={{
                                 fontSize: {
                                     xs: 40,
-                                    sm: 48,
-                                    md: 84,
+                                    sm: 40,
+                                    md: 55,
                                 },
                             }}
                         />
@@ -112,7 +85,10 @@ export const Workflow = () => {
                                             content: '""',
                                             position: 'absolute',
                                             // line
-                                            width: index === 0 ? 105 : 125,
+                                            width:
+                                                index === 0
+                                                    ? { xs: 105, md: 50 }
+                                                    : { xs: 125, md: 70 },
                                             height: '3px',
                                             top: '50%',
                                             left: '100% ',
@@ -130,8 +106,14 @@ export const Workflow = () => {
                                             top: '50%',
                                             left:
                                                 index === 0
-                                                    ? 'calc(100% + 95px)'
-                                                    : 'calc(100% + 115px)',
+                                                    ? {
+                                                          xs: 'calc(100% + 95px)',
+                                                          md: 'calc(100% + 40px)',
+                                                      }
+                                                    : {
+                                                          xs: 'calc(100% + 115px)',
+                                                          md: 'calc(100% + 60px)',
+                                                      },
                                             transform:
                                                 'translateY(-50%) rotate(45deg)',
                                             borderTop:

@@ -1,4 +1,4 @@
-export const navButtons = [
+export const navButtonsValues = [
     {
         label: 'o firmie',
         scrollValue: 'about',

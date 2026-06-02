@@ -1,41 +1,17 @@
 import Salwator from '/src/assets/mikolow-salwator.jpg'
-import {Grid, Stack, Typography} from '@mui/material'
+import { Grid, Stack, Typography } from '@mui/material'
 import Box from '@mui/material/Box'
-import WorkspacePremiumOutlinedIcon from '@mui/icons-material/WorkspacePremiumOutlined'
-import AccessTimeOutlinedIcon from '@mui/icons-material/AccessTimeOutlined'
-import EngineeringOutlinedIcon from '@mui/icons-material/EngineeringOutlined'
-import VerifiedUserOutlinedIcon from '@mui/icons-material/VerifiedUserOutlined'
-import {PartnersCarousel} from "/src/components/About/PartnersCarousel/PartnersCarousel.jsx";
+
+import { PartnersCarousel } from '/src/components/About/PartnersCarousel/PartnersCarousel.jsx'
+import { summaryBoxes } from '/src/components/utils/iconArrays.js'
 
 export const About = () => {
-    const summaryBoxes = [
-        {
-            Icon: WorkspacePremiumOutlinedIcon,
-            label: 'Wysoka jakość',
-            value: 'Najlepsze materiały i technologie',
-        },
-        {
-            Icon: AccessTimeOutlinedIcon,
-            label: 'Terminowość',
-            value: 'Dotrzymujemy ustalonych terminów',
-        },
-        {
-            Icon: EngineeringOutlinedIcon,
-            label: 'Doświadczony zespół',
-            value: 'Wykwalifikowani specjaliści',
-        },
-        {
-            Icon: VerifiedUserOutlinedIcon,
-            label: 'Bezpieczeństwo',
-            value: 'Bezpieczne i zgodne z normami realizacje',
-        },
-    ]
-    
     return (
         <Grid
             id={'about'}
             container
             sx={{
+                scrollMarginTop: '80px',
                 width: '100%',
                 px: {
                     xs: 3,
@@ -160,9 +136,9 @@ export const About = () => {
                         color='textPrimary'
                         sx={{ pt: 4 }}
                     >
-                        CIRRUS to firma, która od 1998 roku dostarcza kompleksowe
-                        usługi budowlane dla firm oraz instytucji. Nasza
-                        specjalność to elewacje, wykończenia oraz budowa i
+                        CIRRUS to firma, która od 1998 roku dostarcza
+                        kompleksowe usługi budowlane dla firm oraz instytucji.
+                        Nasza specjalność to elewacje, wykończenia oraz budowa i
                         remonty budynków komercyjnych. Każdy projekt realizujemy
                         z dbałością o detale, terminowość i najwyższe standardy
                         jakości.
