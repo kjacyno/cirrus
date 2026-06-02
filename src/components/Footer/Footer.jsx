@@ -1,15 +1,17 @@
 import { Button, Grid, Stack, Typography } from '@mui/material'
 import CirrusLogo from '/src/assets/logo-white-transp.png'
 import Box from '@mui/material/Box'
-import { navButtons } from '../utils/navButtons.js'
+import { navButtonsValues } from '../utils/navButtonsValues.js'
 import PhoneIcon from '@mui/icons-material/Phone'
 import ContactMailIcon from '@mui/icons-material/ContactMail'
+import {handleScroll} from '/src/components/utils/handleScroll.js'
 
 export const Footer = () => {
     return (
         <Grid
             id={'footer'}
             container
+            spacing={2}
             sx={{
                 width: '100%',
                 px: {
@@ -22,12 +24,17 @@ export const Footer = () => {
                 justifyContent: 'space-between',
             }}
         >
-            <Grid size={{ xs: 6, md: 3 }}>
+            <Grid size={{ xs: 12, md: 3 }}>
                 <Stack spacing={2}>
                     <Box
                         component='img'
                         sx={{
-                            width: '10rem',
+                            width: {
+                                xs: '7rem',
+                                sm: '8rem',
+                                md: '10rem',
+                                lg: '13rem',
+                            },
                             height: 'auto',
                             objectFit: 'cover',
                         }}
@@ -41,7 +48,7 @@ export const Footer = () => {
                 </Stack>
             </Grid>
             <Grid size={{ xs: 6, md: 3 }}>
-                <Stack sx={{ ml: 6 }}>
+                <Stack sx={{ ml: { md: 6 } }}>
                     <Typography
                         color={'textDiesel'}
                         sx={{
@@ -52,7 +59,7 @@ export const Footer = () => {
                     >
                         nawigacja
                     </Typography>
-                    {navButtons.map(({ label, scrollValue }, index) => (
+                    {navButtonsValues.map(({ label, scrollValue }, index) => (
                         <Button
                             key={index}
                             variant='text'
@@ -61,15 +68,7 @@ export const Footer = () => {
                                 p: 0,
                                 mb: 1,
                             }}
-                            onClick={() => {
-                                const target =
-                                    document.getElementById(scrollValue)
-                                if (target) {
-                                    target.scrollIntoView({
-                                        behavior: 'smooth',
-                                    })
-                                }
-                            }}
+                            onClick={() => handleScroll(scrollValue)}
                         >
                             <Typography
                                 color={'textWhite'}
@@ -85,7 +84,7 @@ export const Footer = () => {
                 </Stack>
             </Grid>
             <Grid size={{ xs: 6, md: 3 }}>
-                <Stack sx={{ ml: 6 }}>
+                <Stack sx={{ ml: { md: 6 } }}>
                     <Typography
                         color={'textDiesel'}
                         sx={{
@@ -117,8 +116,8 @@ export const Footer = () => {
                     </Typography>
                 </Stack>
             </Grid>
-            <Grid size={{ xs: 6, md: 3 }}>
-                <Stack sx={{ ml: 6 }}>
+            <Grid size={{ xs: 12, md: 3 }}>
+                <Stack sx={{ ml: { md: 6 } }}>
                     <Typography
                         color={'textDiesel'}
                         sx={{

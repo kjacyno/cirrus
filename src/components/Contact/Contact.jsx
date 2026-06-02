@@ -8,13 +8,14 @@ export const Contact = () => {
             id={'contact'}
             container
             sx={{
+                scrollMarginTop: '80px',
                 width: '100%',
                 px: 3,
                 py: 3,
                 position: 'relative',
             }}
         >
-            <Grid size={{ xs: 12, md: 6 }} sx={{ mb: {xs: 6, md: 2} }}>
+            <Grid size={{ xs: 12, md: 6 }} sx={{ mb: { xs: 6, md: 2 } }}>
                 <Stack spacing={2}>
                     <Typography
                         color={'textSecondary'}

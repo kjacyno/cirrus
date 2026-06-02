@@ -14,6 +14,9 @@ export const theme = createTheme({
             white: '#ffffff',
             diesel: '#D1E5E1',
         },
+        background: {
+            primary: 'rgba(0, 0, 0, 0.93)',
+        },
     },
     typography: {
         fontSize: 16,

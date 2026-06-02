@@ -1,22 +1,10 @@
 import { Grid, Stack, Typography} from '@mui/material'
 import Construction from '/src/assets/mikolow-salwator5.jpg'
 import Box from '@mui/material/Box'
+import {expItems} from '/src/components/utils/iconArrays.js'
 
 export const Experience = () => {
-     const expItems = [
-         {
-             label: '100+',
-             value: 'zrealizowanych projektów',
-         },
-         {
-             label: '15+',
-             value: 'lat doświadczenia na rynku ',
-         },
-         {
-             label: '100%',
-             value: 'zadowolonych klientów',
-         },
-     ]
+   
     return (
         <Grid
             container
@@ -54,11 +42,11 @@ export const Experience = () => {
             />
             {expItems.map((item, index) => (
                 <Grid
-                    size={{ sx: 12, md: 4 }}
+                    size={{ xs: 12, md: 4 }}
                     spacing={1}
                     key={index}
                     sx={{
-                        zIndex: 200,
+                        zIndex: 8,
                         position: 'relative',
                          textAlign: 'center',
                          display: 'flex',
@@ -67,7 +55,7 @@ export const Experience = () => {
                 >
                     <Stack
                         sx={{
-                            width: '55%',
+                            width: {xs: 'auto', md:'55%'},
                         }}
                     >
                         <Typography
